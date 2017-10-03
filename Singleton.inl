@@ -3,6 +3,8 @@
 
 #include "Singleton.hpp"
 
+#include <cassert>
+
 template<typename Object>
 std::unique_ptr<Object> Singleton<Object>::instance = nullptr;
 
@@ -32,7 +34,6 @@ static Object& Singleton<Object>::getInstance(void)
 template <class Object>
 static Object* Singleton<Object>::getInstancePtr(void)
 {
-	assert(Singleton::instance != nullptr);
 	return Singleton::instance.get();
 }
 

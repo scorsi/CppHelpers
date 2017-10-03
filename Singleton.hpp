@@ -2,7 +2,6 @@
 #pragma once
 
 #include <memory>
-#include <cassert>
 
 template <class Object>
 class Singleton
