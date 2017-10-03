@@ -17,6 +17,9 @@ class DataSpinlock
 	: public NonCopyable, public NonMovable
 {
 public:
+	DataSpinlock(void) : _state(DataSpinlockState::Unlocked) {}
+	virtual ~DataSpinlock(void) {}
+
 	Object& getData(void);
 	void setData(const Object& data);
 	
