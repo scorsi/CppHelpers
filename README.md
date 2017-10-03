@@ -14,19 +14,18 @@ Declaration:
 class IntDataSpinlock : public DataSpinlock<int>
 {
 public:
-  IntDataSpinlock(void) : _data(0) {}
+  IntDataSpinlock(void) : DataSpinlock(0) {}
   virtual ~IntDataSpinlock(void) {}
 }
-
 ```
 How to use:
 ```cpp
-  IntDataSpinlock intDataSpinlock();
+IntDataSpinlock intDataSpinlock();
   
-  intDataSpinlock.lock();
-  int data = intDataSpinlock.getData();
-  data += 3;
-  data *= 3;
-  intDataSpinlock.setData(data);
-  intDataSpinlock.unlock();
+intDataSpinlock.lock();
+int data = intDataSpinlock.getData();
+data += 3;
+data *= 3;
+intDataSpinlock.setData(data);
+intDataSpinlock.unlock();
 ```
