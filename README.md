@@ -1,5 +1,5 @@
 # CppHelpers
-All my C++ Helpers
+All my C++ Helpers, you can use and modify as you wish.
 
 ## DataSpinlock
 The purpose of the DataSpinlock is to prevent multiple threads from concurrently accessing a shared data. It uses boost::atomic for the state which is more optimized than mutex. Be careful to unlock your data, otherwise the data will be always locked (think about exception).
