@@ -18,10 +18,12 @@ class DataSpinlock
 {
 public:
 	Object& getData(void);
+	void setData(const Object& data);
+	
 	void lock(void);
 	void unlock(void);
 
-private:
+protected:
 	boost::atomic<DataSpinlockState> _state;
 	Object _data;
 };
