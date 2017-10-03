@@ -2,7 +2,7 @@
 All my C++ Helpers
 
 ## DataSpinlock
-The purpose of the DataSpinlock is to prevent multiple threads from concurrently accessing a shared data. In contrast to a mutex, threads will busy-wait and waste CPU cycles instead of yielding the CPU to another thread. Do not use spinlocks unless you are certain that you understand the consequences.
+The purpose of the DataSpinlock is to prevent multiple threads from concurrently accessing a shared data. It uses boost::atomic for the state which is more optimized than mutex. Be careful to unlock your data, otherwise the data will be always locked (think about exception).
 
 ### Examples
 
