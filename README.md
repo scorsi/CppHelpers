@@ -20,12 +20,11 @@ public:
 ```
 How to use:
 ```cpp
-IntDataSpinlock intDataSpinlock();
-  
-intDataSpinlock.lock();
-int data = intDataSpinlock.getData();
-data += 3;
-data *= 3;
-intDataSpinlock.setData(data);
-intDataSpinlock.unlock();
+IntDataSpinlock spinlock;
+
+spinlock.lock();
+int data = spinlock.getData();
+data++;
+spinlock.setData(data);
+spinlock.unlock();
 ```
