@@ -10,6 +10,12 @@ Object& DataSpinlock<Object>::getData(void)
 }
 
 template <class Object>
+void DataSpinlock<Object>::setData(const Object& data)
+{
+	this->_data = data;	
+}
+
+template <class Object>
 void DataSpinlock<Object>::lock(void)
 {
 	while (this->_state.exchange(DataSpinlockState::Locked, boost::memory_order_acquire)
