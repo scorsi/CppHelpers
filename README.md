@@ -14,7 +14,7 @@ Declaration:
 class IntDataSpinlock : public DataSpinlock<int>
 {
 public:
-  IntDataSpinlock(void) : _state(DataSpinlockState::Unlocked), _data(0) {}
+  IntDataSpinlock(void) : _data(0) {}
   virtual ~IntDataSpinlock(void) {}
 }
 
